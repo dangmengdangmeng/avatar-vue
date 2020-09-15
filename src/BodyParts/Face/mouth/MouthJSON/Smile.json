@@ -1,0 +1,46 @@
+{
+    "geometries": [
+        {
+            "offset": {"x": 0.000000, "y": 0.000000},
+            "id": "mouth",
+            "type": "path",
+            "fill": "#846246",
+            "d": "M174.5,125.3c-8.9,0-13.7-5.7-13.9-6c-0.5-0.6-0.4-1.4,0.2-1.9c0.6-0.5,1.4-0.4,1.9,0.2c0.2,0.2,4.2,5,11.8,5c7.5,0,10.3-5.1,10.3-5.1c0.4-0.7,1.2-0.9,1.8-0.5c0.7,0.4,0.9,1.2,0.5,1.8C187.1,119,183.6,125.3,174.5,125.3z"
+        },
+        {
+            "offset": {"x": 0.000000, "y": 0.000000},
+            "id": "teeth",
+            "type": "recta",
+            "fill": "#FFFFFF",
+            "fillRule": "evenodd",
+            "mask": "smile-mask",
+            "x": 39,
+            "y": 2,
+            "width": 31,
+            "height": 16,
+            "rx": 5
+        },
+        {
+            "offset": {"x": 0.000000, "y": 0.000000},
+            "id": "tongue-a",
+            "type": "circlea",
+            "fill": "#FF4F6D",
+            "fillRule": "evenodd",
+            "mask": "smile-mask",
+            "cx": 49,
+            "cy": 35,
+            "r": 11
+        },
+        {
+            "offset": {"x": 0.000000, "y": 0.000000},
+            "id": "tongue-b",
+            "type": "circlea",
+            "fill": "#FF4F6D",
+            "fillRule": "evenodd",
+            "mask": "smile-mask",
+            "cx": 59,
+            "cy": 35,
+            "r": 11
+        }
+    ]
+}
