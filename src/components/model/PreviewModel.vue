@@ -23,12 +23,12 @@
 </template>
 
 <script>
-    import Body from '../../BodyParts/Body/Body.vue'
-    import Clothes from '../../BodyParts/Clothes/Clothes.vue'
-    import Face from "../../BodyParts/Face/Face.vue"
-    import Accessories from '../../BodyParts/Header/accessories/Accessories.vue'
-    import Trousers from "../../BodyParts/Trousers/Trousers.vue"
-    import Shoes from "../../BodyParts/Shoes/Shoes.vue"
+    import Body from '../bodyParts/Body/Body.vue'
+    import Clothes from '../bodyParts/Clothes/Clothes.vue'
+    import Face from "../bodyParts/Face/Face.vue"
+    import Accessories from '../bodyParts/Header/accessories/Accessories.vue'
+    import Trousers from "../bodyParts/Trousers/Trousers.vue"
+    import Shoes from "../bodyParts/Shoes/Shoes.vue"
 
     export default {
         name: "PreviewModel",

@@ -8,8 +8,8 @@
         <div class="canvas-container" :style="{width:canvasWidth+'px',height:canvasHeight+'px'}">
             <div class="video-canvas" id="main" v-show="isMain">
                 <video ref="videoEle" playsinline style="display: none;"></video>
-                <canvas ref="outputs"></canvas>
-                <canvas ref="keyPoints"></canvas>
+                <canvas ref="outputs" style="display: none;"></canvas>
+                <canvas ref="keyPoints" style="display: none;"></canvas>
             </div>
             <canvas ref="illustrationCanvas"></canvas>
         </div>
@@ -50,6 +50,10 @@
             left: {
                 type: String,
                 default: '0'
+            },
+            isMute: {
+                type: Boolean,
+                default: false
             }
         },
         data() {
@@ -186,6 +190,9 @@
                 }
 
                 poseDetectionFrame()
+                setTimeout(() => {
+                    this.$emit('startPlay')
+                }, 2500)
             },
 
             async loadVideo() {
@@ -202,6 +209,7 @@
                 video.width = this.videoWidth
                 video.height = this.videoHeight
                 video.src = this.fileUrl
+                video.muted = this.isMute
                 return new Promise((resolve) => {
                     video.onloadeddata = () => {
                         resolve(video)

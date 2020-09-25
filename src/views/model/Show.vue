@@ -1,39 +1,38 @@
 <template>
     <div class="model-show">
-        <div class="top">
-            <upload-file @file="getLeftFile"/>
-            <upload-file @file="getRightFile"/>
-        </div>
         <div class="content">
-            <model-item v-if="leftConfig.svgUrl && leftConfig.fileUrl"
+            <model-item v-if="leftConfig.fileUrl"
                         :svg-url="leftConfig.svgUrl"
                         :file-url="leftConfig.fileUrl"
+                        :is-mute="leftConfig.isMute"
                         model-index="0"/>
-            <model-item v-if="rightConfig.svgUrl && rightConfig.fileUrl"
+            <model-item v-if="rightConfig.fileUrl"
                         model-index="1"
                         left="-200"
                         :svg-url="rightConfig.svgUrl"
-                        :file-url="rightConfig.fileUrl"/>
+                        :file-url="rightConfig.fileUrl"
+                        :is-mute="rightConfig.isMute"/>
         </div>
     </div>
 </template>
 
 <script>
-    import UploadFile from "../../components/UploadFile"
     import ModelItem from "../../components/model/ModelItem"
 
     export default {
         name: "ModelShow",
-        components: {ModelItem, UploadFile},
+        components: {ModelItem},
         data() {
             return {
                 leftConfig: {
                     svgUrl: null,
-                    fileUrl: null
+                    fileUrl: require('../../assets/mp4/girl.mp4'),
+                    isMute: false
                 },
                 rightConfig: {
                     svgUrl: null,
-                    fileUrl: null
+                    fileUrl: require('../../assets/mp4/girl.mp4'),
+                    isMute: true
                 }
             }
         },
@@ -41,14 +40,6 @@
             const svgUrl = this.$route.params.url
             this.leftConfig.svgUrl = svgUrl
             this.rightConfig.svgUrl = svgUrl
-        },
-        methods: {
-            getLeftFile(file) {
-                this.leftConfig.fileUrl = file
-            },
-            getRightFile(file) {
-                this.rightConfig.fileUrl = file
-            }
         }
     }
 </script>
